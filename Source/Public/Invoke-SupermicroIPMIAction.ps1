@@ -64,7 +64,8 @@ Function Invoke-SupermicroIPMIAction {
           -Headers (New-AuthHeader) `
           -Body $body `
           -ContentType "application/json" `
-          -SkipCertificateCheck
+          -SkipCertificateCheck `
+          -ErrorAction Stop
         Write-Verbose "System action '$ResetType' sent successfully."
       }
       catch {
