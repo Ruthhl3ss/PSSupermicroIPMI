@@ -11,6 +11,8 @@ Function Get-SupermicroIPMIinfo {
   This function relies on the Set-AuthHeaders function to set the necessary authentication headers for IPMI requests. If the headers are not set, it will prompt the user for the IP address, username, and password. The retrieved system information is returned as a PowerShell object. Caution! The password is handled in memory and should be managed securely. Always ensure that the password is not exposed in logs or memory dumps.
   #>
 
+  [CmdletBinding()]
+  param()
   begin {
     if (-not $script:credential) {
       Write-Verbose "Authentication headers not set. Prompting for credentials."
