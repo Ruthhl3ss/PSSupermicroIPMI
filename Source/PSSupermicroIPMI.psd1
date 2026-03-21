@@ -5,7 +5,7 @@
   Author            = 'Niels Kok'
   CompanyName       = ''
   Description       = 'PowerShell module for Supermicro IPMI management'
-  PowerShellVersion = '7.5'
+  PowerShellVersion = '7.0'
   FunctionsToExport = @()
   CmdletsToExport   = @()
   VariablesToExport = @()
