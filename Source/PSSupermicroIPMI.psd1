@@ -13,7 +13,7 @@
   PrivateData       = @{
     PSData = @{
       Tags       = @('Supermicro', 'IPMI')
-      ProjectUri = ''
+      ProjectUri = 'https://github.com/Ruthhl3ss/PSSupermicroIPMI'
       LicenseUri = ''
     }
   }
