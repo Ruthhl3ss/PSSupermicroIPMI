@@ -1,12 +1,15 @@
 @{
   RootModule        = 'PSSupermicroIPMI.psm1'
-  ModuleVersion     = '1.0.0'
+  ModuleVersion     = '1.0.1'
   GUID              = 'a4df2184-a450-41c2-8778-0437fe50a8a1'
   Author            = 'Niels Kok'
   CompanyName       = ''
   Description       = 'PowerShell module for Supermicro IPMI management'
   PowerShellVersion = '7.0'
-  FunctionsToExport = @()
+  FunctionsToExport = @(
+    'Get-SupermicroIPMIinfo',
+    'Invoke-SupermicroIPMIAction'
+  )
   CmdletsToExport   = @()
   VariablesToExport = @()
   AliasesToExport   = @()
