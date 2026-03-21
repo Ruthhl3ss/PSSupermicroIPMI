@@ -14,6 +14,8 @@ Function Invoke-SupermicroIPMIAction {
     GracefulRestart - Requests the OS to perform a graceful restart
     ForceOff        - Immediately powers off the system
     GracefulShutdown - Requests the OS to shut down gracefully
+  .PARAMETER Username
+  The username to use when prompting for credentials. Defaults to "ADMIN".
   .EXAMPLE
   Invoke-SupermicroIPMIAction
   Powers on the system using the default ResetType 'On'.
@@ -29,14 +31,17 @@ Function Invoke-SupermicroIPMIAction {
   param (
     [Parameter(Mandatory = $false)]
     [ValidateSet("On", "ForceRestart", "GracefulRestart", "ForceOff", "GracefulShutdown")]
-    [string]$ResetType = "On"
+    [string]$ResetType = "On",
+    [Parameter(Mandatory = $false)]
+    [string]$Username = "ADMIN"
+
   )
 
   begin {
     if (-not $script:credential) {
       Write-Verbose "Authentication headers not set. Prompting for credentials."
       $ipAddress = Read-Host "Enter the IP address of the IPMI interface"
-      $credential = Get-Credential -Message "Enter IPMI credentials" -UserName "ADMIN"
+      $credential = Get-Credential -Message "Enter IPMI credentials" -UserName $Username
       try {
         Set-AuthHeaders -IPAddress $ipAddress -Credential $credential
         Write-Verbose "Authentication headers set successfully."
