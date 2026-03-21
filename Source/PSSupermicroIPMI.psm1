@@ -10,7 +10,7 @@ foreach ($Import in @($Public + $Private)) {
     Write-Verbose -Message "Import function $($Import.Fullname): $_"
   }
   Catch {
-    Write-Error -Message "Failed to import function $($Import.Fullname): $_"
+    Write-Error -Message "Failed to import function $($Import.Fullname): $_" -ErrorAction Stop
   }
 }
 
