@@ -4,6 +4,8 @@ Function Get-SupermicroIPMIinfo {
   Retrieves system information from a Supermicro IPMI interface.
   .DESCRIPTION
   This function checks if authentication headers are set and prompts the user for credentials if they are not. It then makes a REST API call to the IPMI interface to retrieve system information.
+  .PARAMETER Username
+  The username to use when prompting for credentials. Defaults to "ADMIN".
   .EXAMPLE
   Get-SupermicroIPMIinfo
   .NOTES
@@ -11,7 +13,10 @@ Function Get-SupermicroIPMIinfo {
   #>
 
   [CmdletBinding()]
-  param()
+  param(
+    [Parameter(Mandatory = $false)]
+    [string]$Username = "ADMIN"
+  )
   begin {
     if (-not $script:credential) {
       Write-Verbose "Authentication headers not set. Prompting for credentials."

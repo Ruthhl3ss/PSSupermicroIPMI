@@ -1,6 +1,6 @@
 @{
   RootModule        = 'PSSupermicroIPMI.psm1'
-  ModuleVersion     = '1.0.1'
+  ModuleVersion     = '1.0.2'
   GUID              = 'a4df2184-a450-41c2-8778-0437fe50a8a1'
   Author            = 'Niels Kok'
   CompanyName       = ''
