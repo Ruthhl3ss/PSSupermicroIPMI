@@ -29,7 +29,7 @@ function Set-AuthHeaders {
   )
 
   Process {
-    Write-Verbose "Setting credentials for IPMI requests to $IPAddress with username $($Credential.UserName)"
+    Write-Verbose "Setting credentials for IPMI requests to $IPAddress."
 
     $script:baseUrl = "https://$IPAddress"
     $script:credential = $Credential
